@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1708561033 I GEDE ERWIN WINATA PRATAMA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR DENGAN SWITCH CASE</title>
+    <script>
+        // fungsi untuk cek apakah bilangan sudah valid atau belum
+        function alert_mess(a,b){
+            if(!a && !b){ 
+                alert("Kedua bilangan tidak ada!"); 
+                return false;
+            }else if(!a){ 
+                alert("Bilangan pertama tidak ada!"); 
+                return false;
+            }else if(!b){ 
+                alert("Bilangan kedua tidak ada!"); 
+                return false;
+            }else{
+                return true;
+            }
+        }
+        // fungsi calculator
+        function cacl(v){
+            a=Number(document.formcal.bil1.value);
+            b=Number(document.formcal.bil2.value);
+            switch (v) {
+                case "1":
+                    alert_mess(a,b)
+                    c=a+b;
+                    document.formcal.res.value=c;
+                    break;
+                case "2":
+                    alert_mess(a,b)
+                    c=a-b;
+                    document.formcal.res.value=c;
+                    break;
+                case "3":
+                    alert_mess(a,b)
+                    c=a*b;
+                    document.formcal.res.value=c;
+                    break;
+                case "4":
+                    alert_mess(a,b)
+                    c=a/b;
+                    document.formcal.res.value=c;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Kalkulator Javascript</h1>
+    <form name="formcal">
+        <table>
+            <tr>
+                <td>Bilangan 1</td>
+                <td>:</td>
+                <td><input type="text" name="bil1" id=""></td>
+            </tr>
+            <tr>
+                <td>Bilangan 2</td>
+                <td>:</td>
+                <td><input type="text" name="bil2" id=""></td>
+            </tr>
+            <tr>
+                <td>Hasil</td>
+                <td>:</td>
+                <td><input type="text" name="res"></td>
+            </tr>
+        </table>
+        <input type="button" value="+" onclick="javascript:cacl('1');">
+        <input type="button" value="-" onclick="javascript:cacl('2');">
+        <input type="button" value="*" onclick="javascript:cacl('3');">
+        <input type="button" value="/" onclick="javascript:cacl('4');">
+        <button type="reset">Clear</button>
+    </form>
+</body>
+</html>
